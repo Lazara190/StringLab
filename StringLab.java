@@ -1,46 +1,57 @@
-public class StringLab 
-{
-    //this is my main method 
-    public static void main(String[] args)
-    { 
-        System.out.println(" Welcome to the Java String Lab! ");
-        String sentence1 = "My name is Java";
-        String sentence2 = "This is my lab";
-        String sentence3 = "Java Lab";
-        System.out.println(sentence.contains("Lab")); 
+public class StringLab{
+    public static void main(String[] args) {
+        
+        //task 1//
+        String str = "Welcome to the Java String Lab!";
+      
+        System.out.println("Length: " + str.length());
+        System.out.println("Character at index 7: " + str.charAt(7));
+        System.out.println("Substring 'Java': " + str.substring(15, 19));
+
+        System.out.println("Uppercase:" + str.toUpperCase());
+        System.out.println("Lowercase:" + str.toLowerCase());
+        System.out.println("Index of 'Java': " + str.indexOf("Java"));
+        System.out.println("Contains 'Lab': " + str.contains("Lab"));
+        System.out.println("Replace 'Java': " + str.replace("Java", "Java Programming"));
+
+        String[] words = str.split(" ");
+        for (String word : words) {
+          System.out.println("Word: " + word);
+        }
+
+        System.out.println("Equals: " + str.equals(" Java String Lab!"));
+        System.out.println("Equal Ignore Case: " + str.equalsIgnoreCase("Java String Laba!"));
+
+        //task 2//
+        StringBuilder sb = new StringBuilder("StringBuilder Lab");
+        sb.append(" - Learning Java");
+        System.out.println("After append: " + sb);
+
+        sb.insert(sb.indexOf("Lab") + 3, " is fun");
+        System.out.println("After insert: " + sb);
+
+        int start = sb.indexOf("Learning");
+        sb.delete(start, start + "Learning".length() + 1); 
+        System.out.println("After delete: " + sb); 
+        sb.reverse();
+        System.out.println("Reversed: " + sb);
+
+        //Task 3 //
+         StringBuffer sbf = new StringBuffer("Multithreading Lab");
+       
+        sbf.append(" - Learning Java");
+        System.out.println("After append: " + sbf);
         
        
-        System.out.println("The lengt of the first String is equal to" + sentence1.length());
-        System.out.println("The lengt of the second String is equal to" + sentence2.length());
+        sbf.insert(sbf.indexOf("Lab") + 3, " is fun");
+        System.out.println("After insert: " + sbf);
         
-        String str = "String Lab";
-        char ch = str.charAt(7);
-        System.out.println(ch); // Output: W
-        System.out.println(str.substring("java")); //Outputs "String Lab"
-        String x = "java";
+        start = sbf.indexOf("Learning");
+        sbf.delete(start, start + "Learning".length() + 1); 
+        System.out.println("After delete: " + sbf);
         
-        System.out.println("Found Index : " + x.indexOf(x));
+        sbf.reverse();
+        System.out.println("Reversed: " + sbf);
+    }   
 
-        Let text = "Jaba Lab";
-        Let result = text.replace("Java", "Java Programming");
-         String str = "Java Programming Lab";
-                String [] arrOfStr = str.split(" ");
-                for (String a : arrOfStr)
-               System.out.println(a); 
-
-        System.out.println("Original: ' " + str + "'");
-        System.out.println("Original: ' " + str.trim() + "'");
-
-        String s1 = "java string lab!";
-        String s2 =" Wellcome to the Java String Lab!"
-        String s3 = new String("Wellcome to the Java String Lab!");
-
-        System.out.println(s1 == s2); // false, because s1 dont reflect the same object in the string pool 
-        System.out.println(s2 == s3); // true, because s2 reflectate the new operator
-        
-
-            
-    }
-           
-    
-} 
+}
